@@ -339,9 +339,10 @@ input.chat_search_input {
 }
 
 .message_time {
-    font-size: 10px;
+    font-size: 8px;
     color: gray;
     text-align: right;
+    margin-top: 7px;
 }
 
 

@@ -2,9 +2,8 @@ var app = new Vue({
 
     el: "#boolzap",
     data: {
-
         inputText: '',
-        chatWith: 'Prova',
+        chatWith: 0,
         user: {
             name: 'Roberto',
             avatar: '_io',
@@ -90,6 +89,11 @@ var app = new Vue({
                 ],
             },
         ]
+    },
 
+    methods: {
+        userSelected(index) {
+            this.chatWith = index;
+        },
     }
 });

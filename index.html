@@ -66,13 +66,13 @@
 
             <!-- CHAT USER LIST -->
             <div class="chat_list">
-                <div v-for="(userItem, userIndex) in contacts" class="chat_list_user">
+                <div v-for="(chatListItem, chatListIndex) in contacts" class="chat_list_user" @click="userSelected(chatListIndex)">
                     <div class="chat_list_user_image">
-                        <img :src="'img/avatar' + userItem.avatar + '.jpg'">
+                        <img :src="'img/avatar' + chatListItem.avatar + '.jpg'">
                     </div>
 
                     <div class="chat_list_user_name">
-                        {{userItem.name}}
+                        {{chatListItem.name}}
                     </div>
                 </div>
 
@@ -86,11 +86,11 @@
             <div class="chat_user_panel">
 
                 <div class="chat_user_image">
-                    <img :src="'img/avatar' + contacts[0].avatar + '.jpg'">
+                    <img :src="'img/avatar' + contacts[chatWith].avatar + '.jpg'">
                 </div>
 
                 <div class="chat_user_name_box">
-                    <div class="chat_user_name">{{chatWith}}</div>
+                    <div class="chat_user_name">{{contacts[chatWith].name}}</div>
                     <div class="chat_user_date">Ultimo accesso oggi alle</div>
                 </div>
 
@@ -104,7 +104,7 @@
             <!-- CHAT BOX -->
             <div class="chat_panel">
 
-                <div v-for="message in contacts[0].messages">
+                <div v-for="message in contacts[chatWith].messages">
                     <div v-if="(message.status == 'sent')">
                         <div class="message_green">
                             <div class="message_text">
