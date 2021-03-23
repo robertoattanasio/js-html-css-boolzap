@@ -20,40 +20,51 @@
 
 <body class="">
 
+    <!-- MAIN WRAPPER -->
     <div id="boolzap" class="main_wrapper">
 
+        <!-- USER CONTAINER / LEFT FIELD -->
         <div class="user_container">
+
+            <!-- USER PANEL -->
             <div class="user_panel">
+
                 <div class="user_image">
-                    ciao
+                    <img :src="'img/avatar' + user.avatar + '.jpg'">
                 </div>
+
                 <div class="user_name">
-                    ciao
+                    {{user.name}}
                 </div>
+
                 <div class="user_buttons">
-                    ciao
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
 
             </div>
+
+            <!-- NOTIFICATIONS BOX -->
             <div class="notifications">
                 <div class="notifications_logo">
-
-                    ciao
+                    <i class="fas fa-bell-slash"></i>
                 </div>
+
                 <div class="notifications_text">
-                    <div class="notifications_text_title">ciao</div>
-                    <div class="notifications_link">ciao</div>
+                    <div class="notifications_text_title">Ricevi le notifiche di nuovi messaggi</div>
+                    <div class="notifications_link"><a href="#">Attiva notifiche desktop</a></div>
                 </div>
-
-
             </div>
 
+            <!-- CHAT SEARCH BOX -->
             <div class="chat_search">
-                <button class="chat_search_button">bottone</button>
+                <button class="chat_search_button"><i class="fas fa-search"></i></button>
                 <input class="chat_search_input" type="text" placeholder="Cerca o inizia una nuova chat">
 
             </div>
 
+            <!-- CHAT USER LIST -->
             <div class="chat_list">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
@@ -77,24 +88,32 @@
                 elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit
                 libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.
             </div>
-
         </div>
 
-        <div class="chat_container">
-            <div class="chat_user_panel">
-                <div class="chat_user_image">
-                    ciao
-                </div>
-                <div class="chat_user_name_box">
-                    <div class="chat_user_name">ciao</div>
-                    <div class="chat_user_date">ciao</div>
+        <!-- CHAT CONTAINER / RIGHT FIELD -->
 
+        <div class="chat_container">
+
+            <!-- USER PANEL -->
+            <div class="chat_user_panel">
+
+                <div class="chat_user_image">
+                    <img :src="'img/avatar' + contacts[0].avatar + '.jpg'">
                 </div>
+
+                <div class="chat_user_name_box">
+                    <div class="chat_user_name">{{contacts[0].name}}</div>
+                    <div class="chat_user_date">Ultimo accesso oggi alle</div>
+                </div>
+
                 <div class="chat_user_buttons">
-                    ciao
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
 
+            <!-- CHAT BOX -->
             <div class="chat_panel">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic. Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -139,14 +158,25 @@
                 omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.
             </div>
 
+            <!-- INPUT BOX -->
             <div class="chat_input">
-                <button class="chat_input_emoticons">smile</button>
-                <input class="chat_input_text" type="text" placeholder="Scrivi qui il tuo messaggio">
-                <button class="chat_input_send">send</button>
 
+                <button class="chat_input_emoticons"><i class="far fa-smile"></i></button>
+
+                <input v-model="inputText" class="chat_input_text" type="text" placeholder="Scrivi qui il tuo messaggio">
+
+                <button class="chat_input_send">
+
+                    <div v-if="(inputText == '')">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+
+                    <div v-else>
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                </button>
 
             </div>
-
         </div>
     </div>
 
