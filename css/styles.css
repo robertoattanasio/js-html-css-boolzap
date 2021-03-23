@@ -28,6 +28,9 @@ body {
     background: linear-gradient(to bottom, var(--dark-green) 0 120px, #d8dbd8 120px 100%);
 }
 
+
+/* MAIN WRAPPER */
+
 .main_wrapper {
     display: flex;
     flex-flow: row nowrap;
@@ -35,8 +38,11 @@ body {
     margin: 20px auto;
     flex-flow: 1 1 auto;
     background-color: white;
-    box-shadow: 0px 0px 2px gray;
+    box-shadow: 0px 0px 3px gray;
 }
+
+
+/* USER CONTAINER */
 
 .user_container {
     flex: 0 0 370px;
@@ -45,54 +51,164 @@ body {
     border-right: 1px solid lightgray;
 }
 
-.chat_container {
-    position: relative;
-    flex: 1 1 auto;
-    display: flex;
-    flex-flow: column nowrap;
-}
 
-.user_panel,
-.chat_user_panel {
+/* USER PANEL */
+
+.user_panel {
+    display: flex;
     flex-shrink: 0;
     width: 100%;
     height: 70px;
     background-color: var(--gray);
 }
 
+.user_image {
+    flex: 0 0 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_name {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.user_buttons {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* NOTIFICATIONS BOX */
+
 .notifications {
+    display: flex;
     flex-shrink: 0;
     width: 100%;
     height: 70px;
     background-color: var(--light-blue);
 }
 
+.notifications_logo {
+    flex: 0 0 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notifications_text {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+
+/* CHAT SEARCH BOX */
+
 .chat_search {
+    display: flex;
+    justify-content: space-between;
     flex-shrink: 0;
     width: 100%;
     height: 50px;
+    padding: 10px;
     background-color: var(--light-gray);
 }
+
+button.chat_search_button {
+    width: 50px;
+}
+
+input.chat_search_input {
+    flex: 1 1 auto;
+    margin-left: 5px;
+}
+
+
+/* CHAT LIST BOX */
 
 .chat_list {
     flex: 1 1 auto;
     overflow-y: scroll;
 }
 
+
+/* CHAT CONTAINER */
+
+.chat_container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.chat_user_panel {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--gray);
+}
+
+.chat_user_image {
+    flex: 0 0 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat_user_name_box {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.chat_user_buttons {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .chat_panel {
     flex: 1 1 auto;
     background-image: url(../img/mine.jpg);
     background-position: center;
+    overflow-y: scroll;
 }
 
 .chat_input {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    background-color: var(--gray);
 }
+
+button.chat_input_emoticons {
+    flex: 0 0 70px;
+    height: 100%;
+}
+
+input.chat_input_text {
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+button.chat_input_send {
+    flex: 0 0 70px;
+    height: 100%;
+}
+
+
+/* MEDIA QUERY PER FULL SCREEN APP SCHERMI SOTTO I 1170px */
 
 @media screen and (max-width:1170px) {
     .main_wrapper {
