@@ -16,6 +16,7 @@
 :root {
     --dark-green: #419388;
     --green: #78db8c;
+    --lime-green: #dcf7c0;
     --gray: #eaeaea;
     --light-blue: #9ed9f8;
     --light-gray: #fafafa;
@@ -240,6 +241,9 @@ input.chat_search_input {
     flex-flow: column nowrap;
 }
 
+
+/* CHAT USER PANEL */
+
 .chat_user_panel {
     display: flex;
     flex-shrink: 0;
@@ -296,12 +300,52 @@ input.chat_search_input {
     color: gray;
 }
 
+
+/* CHAT BOX PANEL */
+
 .chat_panel {
     flex: 1 1 auto;
     background-image: url(../img/mine.jpg);
     background-position: center;
     overflow-y: scroll;
+    padding: 50px 30px;
 }
+
+.message_green {
+    float: right;
+    clear: both;
+    min-width: 70px;
+    min-height: 40px;
+    background-color: var(--lime-green);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message_white {
+    float: left;
+    clear: both;
+    min-width: 70px;
+    min-height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message_text {
+    font-size: 12px;
+    text-align: left;
+}
+
+.message_time {
+    font-size: 10px;
+    color: gray;
+    text-align: right;
+}
+
+
+/* CHAT INPUT BOX */
 
 .chat_input {
     display: flex;

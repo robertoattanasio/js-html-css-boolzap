@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="chat_user_name_box">
-                    <div class="chat_user_name">{{contacts[0].name}}</div>
+                    <div class="chat_user_name">{{chatWith}}</div>
                     <div class="chat_user_date">Ultimo accesso oggi alle</div>
                 </div>
 
@@ -104,6 +104,29 @@
             <!-- CHAT BOX -->
             <div class="chat_panel">
 
+                <div v-for="message in contacts[0].messages">
+                    <div v-if="(message.status == 'sent')">
+                        <div class="message_green">
+                            <div class="message_text">
+                                {{message.text}}
+                            </div>
+                            <div class="message_time">
+                                {{message.date}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-else>
+                        <div class="message_white">
+                            <div class="message_text">
+                                {{message.text}}
+                            </div>
+                            <div class="message_time">
+                                {{message.date}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- INPUT BOX -->

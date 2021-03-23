@@ -2,7 +2,9 @@ var app = new Vue({
 
     el: "#boolzap",
     data: {
+
         inputText: '',
+        chatWith: 'Prova',
         user: {
             name: 'Roberto',
             avatar: '_io',
