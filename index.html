@@ -66,32 +66,20 @@
 
             <!-- CHAT USER LIST -->
             <div class="chat_list">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-                et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci
-                praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem
-                nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt
-                quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae
-                quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore
-                illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem
-                ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit
-                libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium
-                numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil
-                at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt
-                quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae
-                quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore
-                illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem
-                ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit. Mollitia et impedit libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia et impedit
-                libero adipisci praesentium numquam dolorem nihil at odio. Nam, deserunt quis totam recusandae quod similique tempore illum est beatae.
+                <div v-for="(userItem, userIndex) in contacts" class="chat_list_user">
+                    <div class="chat_list_user_image">
+                        <img :src="'img/avatar' + userItem.avatar + '.jpg'">
+                    </div>
+
+                    <div class="chat_list_user_name">
+                        {{userItem.name}}
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <!-- CHAT CONTAINER / RIGHT FIELD -->
-
         <div class="chat_container">
 
             <!-- USER PANEL -->
@@ -115,47 +103,7 @@
 
             <!-- CHAT BOX -->
             <div class="chat_panel">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic. Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam
-                consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati
-                omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam
-                cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa
-                dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus
-                eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam
-                dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem
-                atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate
-                odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam
-                consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati
-                omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam
-                cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa
-                dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus
-                eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam
-                dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem
-                atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate
-                odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam
-                consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati
-                omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam
-                cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa
-                dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus
-                eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam
-                dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem
-                atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate
-                odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloribus quam consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam
-                consequatur obcaecati omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam consequatur obcaecati
-                omnis, in numquam cumque nobis, culpa dolor temporibus eum maiores aliquam dignissimos quidem atque cupiditate odit illo hic.
+
             </div>
 
             <!-- INPUT BOX -->
@@ -163,7 +111,7 @@
 
                 <button class="chat_input_emoticons"><i class="far fa-smile"></i></button>
 
-                <input v-model="inputText" class="chat_input_text" type="text" placeholder="Scrivi qui il tuo messaggio">
+                <input v-model="inputText" class="chat_input_text" type="text" placeholder="Scrivi un messaggio">
 
                 <button class="chat_input_send">
 

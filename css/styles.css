@@ -192,8 +192,43 @@ input.chat_search_input {
 /* CHAT LIST BOX */
 
 .chat_list {
+    display: flex;
+    flex-flow: column nowrap;
     flex: 1 1 auto;
     overflow-y: scroll;
+}
+
+.chat_list_user {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid var(--gray);
+    transition: var(--main-trans);
+}
+
+.chat_list_user:hover {
+    cursor: pointer;
+    background-color: var(--gray);
+}
+
+.chat_list_user_image {
+    flex: 0 0 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.chat_list_user_image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.chat_list_user_name {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    font-size: 16px;
 }
 
 
@@ -280,7 +315,7 @@ input.chat_search_input {
 
 button.chat_input_emoticons,
 button.chat_input_send {
-    flex: 0 0 150px;
+    flex: 0 0 120px;
     height: 100%;
     font-size: 22px;
     color: #b1b1b1;
