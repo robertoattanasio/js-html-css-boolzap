@@ -2,8 +2,8 @@ var app = new Vue({
 
     el: "#boolzap",
     data: {
-        chatInputText: '',
         chatUserSelected: 0,
+        chatInputText: '',
         searchInput: '',
         user: {
             name: 'Roberto',
@@ -121,7 +121,16 @@ var app = new Vue({
             this.chatInputText = '';
         },
     },
-
+    created: function() {
+        // Tasto Enter che invia il contenuto dell'input field
+        document.addEventListener('keyup', (e) => {
+            if (e.keyCode == 13) {
+                if (!this.chatInputText == '') {
+                    this.sendMessage(this.chatUserSelected);
+                }
+            }
+        })
+    }
 
 });
 
