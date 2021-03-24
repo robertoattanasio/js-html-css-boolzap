@@ -60,19 +60,22 @@
             <!-- CHAT SEARCH BOX -->
             <div class="chat_search">
                 <button class="chat_search_button"><i class="fas fa-search"></i></button>
-                <input class="chat_search_input" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input class="chat_search_input" v-model="searchInput" type="text" placeholder="Cerca o inizia una nuova chat">
 
             </div>
 
             <!-- CHAT USER LIST -->
             <div class="chat_list">
-                <div v-for="(chatListItem, chatListIndex) in contacts" class="chat_list_user" @click="userSelected(chatListIndex)">
-                    <div class="chat_list_user_image">
-                        <img :src="'img/avatar' + chatListItem.avatar + '.jpg'">
-                    </div>
 
-                    <div class="chat_list_user_name">
-                        {{chatListItem.name}}
+                <div v-for="(chatListItem, chatListIndex) in contacts" @click="userSelected(chatListIndex)">
+                    <div v-if="chatListItem.visible == true" class="chat_list_user">
+                        <div class="chat_list_user_image">
+                            <img :src="'img/avatar' + chatListItem.avatar + '.jpg'">
+                        </div>
+
+                        <div class="chat_list_user_name">
+                            {{chatListItem.name}}
+                        </div>
                     </div>
                 </div>
 

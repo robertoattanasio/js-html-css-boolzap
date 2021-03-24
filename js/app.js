@@ -4,6 +4,7 @@ var app = new Vue({
     data: {
         chatInputText: '',
         chatWith: 0,
+        searchInput: '',
         user: {
             name: 'Roberto',
             avatar: '_io',
@@ -88,7 +89,7 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
     },
 
     methods: {
@@ -108,23 +109,43 @@ var app = new Vue({
             // PUSH DEL MESSAGGIO NELLA CHAT
             this.contacts[index].messages.push(newMessage);
 
+            setTimeout(function() {
+                newMessage = {
+                    date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
+                    text: 'Okay',
+                    status: 'received'
+                };
+                console.log(this.chatWith);
+            }, 1000);
+
             // RESET INPUT BOX ALL'INVIO
             this.chatInputText = '';
-            // this.autoMessage(index);
         },
-
-        // autoMessage: setTimeout(function(index) {
-        //     newMessage = {
-        //         date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
-        //         text: 'Okay',
-        //         status: 'received'
-        //     };
-        //     // PUSH DEL MESSAGGIO NELLA CHAT
-        //     this.contacts[index].messages.push(newMessage);
-        // }, 1000),
     },
 
-    created: {
 
-    }
 });
+
+
+// newMessage = {
+//     date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
+//     text: 'Okay',
+//     status: 'received'
+// };
+
+
+
+
+
+
+// created: function searchList() {
+//     this.contactsFiltered = [];
+//     var checkName = `/${this.searchInput}/g`;
+//     console.log(checkName);
+//     this.contacts.forEach(element => {
+//         if (element.name.toLowerCase().match(checkName.toLowerCase())) {
+//             this.contactsFiltered.push(element);
+//         }
+//     });
+//     console.log(this.contactsFiltered);
+// }
