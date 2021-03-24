@@ -307,7 +307,7 @@ input.chat_search_input {
     flex: 1 1 auto;
     background-image: url(../img/mine.jpg);
     background-position: center;
-    overflow-y: scroll;
+    overflow: scroll;
     padding: 50px 30px;
 }
 

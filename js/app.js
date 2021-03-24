@@ -93,6 +93,16 @@ var app = new Vue({
     },
 
     methods: {
+        searchListener(searchInput) {
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().match(searchInput.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
+        },
+
         userSelected(userSelected) {
             // SELEZIONE UTENTE
             this.chatUserSelected = userSelected;
@@ -109,18 +119,20 @@ var app = new Vue({
             // PUSH DEL MESSAGGIO NELLA CHAT
             this.contacts[userSelected].messages.push(newMessage);
 
-            setTimeout(function() {
+            setTimeout(() => {
                 newMessage = {
                     date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
                     text: 'Okay',
                     status: 'received'
                 };
+                this.contacts[userSelected].messages.push(newMessage);
             }, 1000);
 
             // RESET INPUT BOX ALL'INVIO
             this.chatInputText = '';
         },
     },
+
     created: function() {
         // Tasto Enter che invia il contenuto dell'input field
         document.addEventListener('keyup', (e) => {
@@ -133,14 +145,6 @@ var app = new Vue({
     }
 
 });
-
-
-// newMessage = {
-//     date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
-//     text: 'Okay',
-//     status: 'received'
-// };
-
 
 
 

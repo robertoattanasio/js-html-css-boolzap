@@ -60,7 +60,7 @@
             <!-- CHAT SEARCH BOX -->
             <div class="chat_search">
                 <button class="chat_search_button"><i class="fas fa-search"></i></button>
-                <input class="chat_search_input" v-model="searchInput" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input class="chat_search_input" v-model="searchInput" v-on:keyup="searchListener(searchInput)" type="text" placeholder="Cerca o inizia una nuova chat">
 
             </div>
 
