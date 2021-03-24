@@ -3,7 +3,7 @@ var app = new Vue({
     el: "#boolzap",
     data: {
         chatInputText: '',
-        chatWith: 0,
+        chatUserSelected: 0,
         searchInput: '',
         user: {
             name: 'Roberto',
@@ -93,12 +93,12 @@ var app = new Vue({
     },
 
     methods: {
-        userSelected(index) {
+        userSelected(userSelected) {
             // SELEZIONE UTENTE
-            this.chatWith = index;
+            this.chatUserSelected = userSelected;
         },
 
-        sendMessage(index) {
+        sendMessage(userSelected) {
             // VARIABILE OGGETTO PER NUOVO MESSAGGIO
             newMessage = {
                 // scrittura della data con day.js
@@ -107,7 +107,7 @@ var app = new Vue({
                 status: 'sent'
             };
             // PUSH DEL MESSAGGIO NELLA CHAT
-            this.contacts[index].messages.push(newMessage);
+            this.contacts[userSelected].messages.push(newMessage);
 
             setTimeout(function() {
                 newMessage = {
@@ -115,7 +115,6 @@ var app = new Vue({
                     text: 'Okay',
                     status: 'received'
                 };
-                console.log(this.chatWith);
             }, 1000);
 
             // RESET INPUT BOX ALL'INVIO
