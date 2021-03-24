@@ -2,7 +2,7 @@ var app = new Vue({
 
     el: "#boolzap",
     data: {
-        inputText: '',
+        chatInputText: '',
         chatWith: 0,
         user: {
             name: 'Roberto',
@@ -93,7 +93,34 @@ var app = new Vue({
 
     methods: {
         userSelected(index) {
+            // SELEZIONE UTENTE
             this.chatWith = index;
         },
+
+        sendMessage(index) {
+            // VARIABILE OGGETTO PER NUOVO MESSAGGIO
+            newMessage = {
+                // scrittura della data con day.js
+                date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
+                text: this.chatInputText,
+                status: 'sent'
+            };
+            // PUSH DEL MESSAGGIO NELLA CHAT
+            this.contacts[index].messages.push(newMessage);
+
+            // RESET INPUT BOX ALL'INVIO
+            this.chatInputText = '';
+            // this.autoMessage(index);
+        },
+
+        // autoMessage: setTimeout(function(index) {
+        //     newMessage = {
+        //         date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
+        //         text: 'Okay',
+        //         status: 'received'
+        //     };
+        //     // PUSH DEL MESSAGGIO NELLA CHAT
+        //     this.contacts[index].messages.push(newMessage);
+        // }, 1000),
     }
 });
