@@ -171,6 +171,7 @@ button.chat_search_button {
     border: none;
     color: #b1b1b1;
     transition: var(--main-trans);
+    outline: transparent;
 }
 
 button.chat_search_button:hover {

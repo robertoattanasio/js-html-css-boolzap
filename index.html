@@ -137,7 +137,7 @@
 
                 <button class="chat_input_emoticons"><i class="far fa-smile"></i></button>
 
-                <input v-model="chatInputText" class="chat_input_text" type="text" placeholder="Scrivi un messaggio">
+                <input v-model="chatInputText" v-on:keyup.enter="sendMessage(chatUserSelected)" class="chat_input_text" type="text" placeholder="Scrivi un messaggio">
 
                 <button class="chat_input_send">
                     <div v-if="(chatInputText == '')">

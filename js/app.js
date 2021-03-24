@@ -94,13 +94,20 @@ var app = new Vue({
 
     methods: {
         searchListener(searchInput) {
-            this.contacts.forEach(element => {
-                if (element.name.toLowerCase().match(searchInput.toLowerCase())) {
+            counterLetters = searchInput.length;
+            if (counterLetters > 0) {
+                this.contacts.forEach(element => {
+                    if (element.name.toLowerCase().substring(0, counterLetters) == searchInput.toLowerCase()) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                });
+            } else {
+                this.contacts.forEach(element => {
                     element.visible = true;
-                } else {
-                    element.visible = false;
-                }
-            });
+                });
+            }
         },
 
         userSelected(userSelected) {
@@ -109,55 +116,30 @@ var app = new Vue({
         },
 
         sendMessage(userSelected) {
-            // VARIABILE OGGETTO PER NUOVO MESSAGGIO
-            newMessage = {
-                // scrittura della data con day.js
-                date: `${dayjs().format('DD/MM/YYYY')} ${dayjs().format('HH:mm:ss')}`,
-                text: this.chatInputText,
-                status: 'sent'
-            };
-            // PUSH DEL MESSAGGIO NELLA CHAT
-            this.contacts[userSelected].messages.push(newMessage);
-
-            setTimeout(() => {
+            // CHECK: se il campo è vuoto il tasto enter non fa nullas
+            if (this.chatInputText != '') {
+                // VARIABILE OGGETTO PER NUOVO MESSAGGIO
                 newMessage = {
-                    date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
-                    text: 'Okay',
-                    status: 'received'
+                    // scrittura della data con day.js
+                    date: `${dayjs().format('DD/MM/YYYY')} ${dayjs().format('HH:mm:ss')}`,
+                    text: this.chatInputText,
+                    status: 'sent'
                 };
+                // PUSH DEL MESSAGGIO NELLA CHAT
                 this.contacts[userSelected].messages.push(newMessage);
-            }, 1000);
 
-            // RESET INPUT BOX ALL'INVIO
-            this.chatInputText = '';
+                setTimeout(() => {
+                    newMessage = {
+                        date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
+                        text: 'Okay',
+                        status: 'received'
+                    };
+                    this.contacts[userSelected].messages.push(newMessage);
+                }, 1000);
+
+                // RESET INPUT BOX ALL'INVIO
+                this.chatInputText = '';
+            }
         },
     },
-
-    created: function() {
-        // Tasto Enter che invia il contenuto dell'input field
-        document.addEventListener('keyup', (e) => {
-            if (e.keyCode == 13) {
-                if (!this.chatInputText == '') {
-                    this.sendMessage(this.chatUserSelected);
-                }
-            }
-        })
-    }
-
 });
-
-
-
-
-
-// created: function searchList() {
-//     this.contactsFiltered = [];
-//     var checkName = `/${this.searchInput}/g`;
-//     console.log(checkName);
-//     this.contacts.forEach(element => {
-//         if (element.name.toLowerCase().match(checkName.toLowerCase())) {
-//             this.contactsFiltered.push(element);
-//         }
-//     });
-//     console.log(this.contactsFiltered);
-// }
