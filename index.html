@@ -72,9 +72,9 @@
                         <div class="chat_list_user_image">
                             <img :src="'img/avatar' + chatListItem.avatar + '.jpg'">
                         </div>
-
-                        <div class="chat_list_user_name">
-                            {{chatListItem.name}}
+                        <div class="chat_user_name_box">
+                            <div class="chat_user_name">{{chatListItem.name}}</div>
+                            <div class="chat_user_date">Ultimo messaggio il {{chatListItem.messages[chatListItem.messages.length -1].date}}</div>
                         </div>
                     </div>
                 </div>
