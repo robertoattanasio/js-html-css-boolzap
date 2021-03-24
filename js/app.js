@@ -101,8 +101,7 @@ var app = new Vue({
             // VARIABILE OGGETTO PER NUOVO MESSAGGIO
             newMessage = {
                 // scrittura della data con day.js
-                // date: `${dayjs().date()}/${dayjs().month() + 1}/${dayjs().year()} ${dayjs().hour()}:${dayjs().minute()}:${dayjs().second()}`,
-                date: `${dayjs().format('DD/MM/YYYY')} ${dayjs().format('HH')}:${dayjs().format('MM')}:${dayjs().format('SS')}`,
+                date: `${dayjs().format('DD/MM/YYYY')} ${dayjs().format('HH:mm:ss')}`,
                 text: this.chatInputText,
                 status: 'sent'
             };
