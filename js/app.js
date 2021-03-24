@@ -122,5 +122,9 @@ var app = new Vue({
         //     // PUSH DEL MESSAGGIO NELLA CHAT
         //     this.contacts[index].messages.push(newMessage);
         // }, 1000),
+    },
+
+    created: {
+
     }
 });
