@@ -323,6 +323,7 @@ input.chat_search_input {
     padding: 10px;
     margin-bottom: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 3px lightgray;
 }
 
 .message_white {
@@ -336,6 +337,7 @@ input.chat_search_input {
     padding: 10px;
     margin-bottom: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 3px lightgray;
 }
 
 .message_text {
@@ -426,11 +428,16 @@ input.chat_input_text {
     flex: 1 1 auto;
     height: 100%;
     padding: 0 10px;
-    outline: gray;
+    outline-color: transparent;
     background-color: white;
     border: transparent;
     border-radius: 5px;
     overflow: visible;
+}
+
+input.chat_input_text:focus {
+    outline-width: 1px;
+    outline-color: gray;
 }
 
 button.chat_input_emoticons:focus,
