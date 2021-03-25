@@ -5,6 +5,7 @@ var app = new Vue({
         chatUserSelected: 0,
         chatInputText: '',
         searchInput: '',
+        show: false,
         user: {
             name: 'Roberto',
             avatar: '_io',
@@ -278,5 +279,9 @@ var app = new Vue({
                 this.chatInputText = '';
             }
         },
+
+        deleteMessage(messageIndex) {
+            this.contacts[this.chatUserSelected].messages.splice(messageIndex, 1);
+        }
     },
 });
