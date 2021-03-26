@@ -283,7 +283,12 @@ var app = new Vue({
         },
 
         deleteMessage(messageIndex) {
-            this.contacts[this.chatUserSelected].messages.splice(messageIndex, 1);
+            if (messageIndex == 0) {
+                this.contacts.splice(this.chatUserSelected, 1);
+            } else {
+                this.contacts[this.chatUserSelected].messages.splice(messageIndex, 1);
+            }
+
         }
     },
 });
